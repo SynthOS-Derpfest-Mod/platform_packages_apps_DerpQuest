@@ -118,7 +118,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
                 findPreference(BATTERY_ICON_STYLE);
         mBatteryIconStyle.setOnPreferenceChangeListener(this);
         enabled = Settings.System.getInt(resolver,
-                Settings.System.STATUS_BAR_BATTERY_STYLE, 0) < 4;
+                Settings.System.STATUS_BAR_BATTERY_STYLE, 0) != 6;
         mBatteryIconStyle.setChecked(enabled);
 
         mNotificationTicker = (SystemSettingMasterSwitchPreference)
