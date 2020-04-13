@@ -1240,4 +1240,8 @@
     <!-- SynthOS Settings -->
     <string name="synthui_category_title">SynthUI</string>
 
+    <!-- Volume panel Hide Things-->
+    <string name="synthos_hide_things_volumepanel_title">Hide Things below volume panel</string>
+    <string name="synthos_hide_things_volumepanel_summary">Hide Settings and Ringer Container below volume panel</string>
+
 </resources>
