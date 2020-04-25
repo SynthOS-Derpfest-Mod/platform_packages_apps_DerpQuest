@@ -41,6 +41,13 @@
             android:summary="@string/rgb_accent_picker_summary"
             android:persistent="false" />
 
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="gradient_color"
+            android:title="@string/gradient_color"
+            android:defaultValue="0xffffff"
+            android:summary="@string/gradient_color_summary"
+            android:persistent="false" />
+
         <com.derpquest.settings.preferences.SystemSettingListPreference
             android:key="switch_style"
             android:title="@string/switch_style_title"

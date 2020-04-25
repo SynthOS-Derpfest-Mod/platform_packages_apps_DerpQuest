@@ -60,6 +60,7 @@
     <string name="hidden">Hidden</string>
     <string name="intensity">Intensity</string>
     <string name="and"> &amp; </string>
+    <string name="custom_string">Custom</string>
 
     <!-- General error strings -->
     <string name="translation_error">Translation error</string>
@@ -926,6 +927,13 @@
     <string name="fod_recog_animation_pureview_future">Future</string>
     <string name="fod_recog_animation_pureview_molecular">Molecular</string>
 
+    <!-- RGB Picker -->
+    <string name="accent_color">Accent picker</string>
+    <string name="accent_summary">System wide accent picker</string>
+    <string name="gradient_color">Gradient picker</string>
+    <string name="accent_color_summary">Accent</string>
+    <string name="gradient_color_summary">Gradient</string>
+
     <!-- Text Clock -->
     <string name="text_clock_customizations">Text Clock</string>
     <string name="text_clock_alignment">Alignment</string>
@@ -1207,7 +1215,6 @@
     <!-- Brightness Slider MIUI -->
     <string name="brightness_slider_qs_unexpanded">MIUI style brightness slider (beta)</string>
     <string name="brightness_slider_qs_unexpanded_summary">Shows brightness slider below qs panel</string>
-
 
     <!-- Omni Jaws -->
     <string name="weather_title">Weather settings</string>
