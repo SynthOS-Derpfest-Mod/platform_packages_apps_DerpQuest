@@ -1031,4 +1031,11 @@
     <string name="lockscreen_weather_omni_style_title">Omni style</string>
     <string name="lockscreen_weather_pixel_style_title">Pixel style</string>
 
+    <!-- Cool Dividers WITH GRADIENT -->
+    <string name="synthos_lock_cool_divider_show_title">Show Cool Dividers</string>
+    <string name="synthos_lock_cool_divider_show_summary">Show two cool dividers on the lockscreen (with gradient)</string>
+
+    <!-- SynthOS Settings -->
+    <string name="synthui_category_title">SynthUI</string>
+
 </resources>

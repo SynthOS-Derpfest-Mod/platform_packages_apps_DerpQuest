@@ -92,6 +92,18 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:title="@string/synthui_category_title">
+
+        <!-- Cool dividers -->
+        <com.derpquest.settings.preferences.SystemSettingSwitchPreference
+            android:key="synthos_lock_cool_divider_show"
+            android:title="@string/synthos_lock_cool_divider_show_title"
+            android:summary="@string/synthos_lock_cool_divider_show_summary"
+            android:defaultValue="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="lockscreen_info_category"
         android:title="@string/lockscreen_info_category_title">
 
