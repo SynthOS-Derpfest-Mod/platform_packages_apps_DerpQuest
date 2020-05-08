@@ -513,7 +513,7 @@
 
     <!-- ambient visualizer -->
     <string name="ambient_visualizer_title">Show LS Visualizer on Ambient Display</string>
-    <string name="ambient_visualizer_summary">Shows the visualization bars also on ambient display (but less opaque)</string>
+    <string name="ambient_visualizer_summary">Shows the visualization bars also on ambient display (but less opaque) (Reboot SystemUI to apply)</string>
 
     <!-- Incall vibrate options -->
     <string name="incall_vibration_category">In-call vibration options</string>
@@ -1054,5 +1054,8 @@
     <!-- Toggle OneUI Date Format -->
     <string name="synthos_oneui_date_format_title">Toggle OneUI Date Format</string>
     <string name="synthos_oneui_date_format_summary">Toggle OneUI Date Format (eee, MMMM dd)</string>
+
+    <!-- Show Visualizer in QSPanel -->
+    <string name="synthos_visualizer_qspanel_title">Show Music Visualizer in QS Panel</string>
 
 </resources>
