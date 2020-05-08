@@ -1058,4 +1058,18 @@
     <!-- Show Visualizer in QSPanel -->
     <string name="synthos_visualizer_qspanel_title">Show Music Visualizer in QS Panel</string>
 
+    <string name="synthui_accent_clock_qsexpanded_title">Add Accent in Clock</string>
+    <string name="synthui_accent_clock_qsexpanded_summary">Add a Accent in Clock of QS Header Extended</string>
+
+    <string name="synthui_accent_date_qsexpanded_title">Add Accent in Date</string>
+    <string name="synthui_accent_date_qsexpanded_summary">Add a Accent in Date of QS Header Extended</string>
+
+    <string name="synthui_statusicons_qsextended_title">Show Status Icons in QS Header</string>
+
+    <string name="synthui_statusinfo_qsextended_title">Show Status Info in QS Header</string>
+
+    <string name="synthui_qsexpanded_text_show_title">Show QS expanded text</string>
+    <string name="synthui_qsexpanded_text_string_title">Customize text</string>
+    <string name="synthui_qsexpanded_text_string_summary">Set to empty for default #SynthOS</string>
+
 </resources>

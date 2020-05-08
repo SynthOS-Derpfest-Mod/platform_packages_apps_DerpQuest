@@ -40,4 +40,43 @@
         android:summary="@string/qs_clock_summary"
         android:defaultValue="true" />
 
+    <PreferenceCategory
+        android:title="@string/synthui_category_title">
+
+        <com.derpquest.settings.preferences.SystemSettingSwitchPreference
+            android:key="synthui_accent_clock_qsexpanded"
+            android:title="@string/synthui_accent_clock_qsexpanded_title"
+            android:summary="@string/synthui_accent_clock_qsexpanded_summary"
+            android:defaultValue="true" />
+
+        <com.derpquest.settings.preferences.SystemSettingSwitchPreference
+            android:key="synthui_accent_date_qsexpanded"
+            android:title="@string/synthui_accent_date_qsexpanded_title"
+            android:summary="@string/synthui_accent_date_qsexpanded_summary"
+            android:defaultValue="true" />
+
+        <com.derpquest.settings.preferences.SystemSettingSwitchPreference
+            android:key="synthui_statusicons_qsexpanded"
+            android:title="@string/synthui_statusicons_qsextended_title"
+            android:defaultValue="true" />
+
+        <com.derpquest.settings.preferences.SystemSettingSwitchPreference
+            android:key="synthui_statusinfo_qsexpanded"
+            android:title="@string/synthui_statusinfo_qsextended_title"
+            android:defaultValue="false" />
+
+        <com.derpquest.settings.preferences.SystemSettingSwitchPreference
+            android:key="synthui_qsexpanded_text_show"
+            android:title="@string/synthui_qsexpanded_text_show_title"
+            android:defaultValue="true" />
+
+        <com.derpquest.settings.preferences.SystemSettingEditTextPreference
+            android:key="synthui_qsexpanded_text_string"
+            android:title="@string/synthui_qsexpanded_text_string_title"
+            android:summary="@string/synthui_qsexpanded_text_string_summary"
+            android:dependency="synthui_qsexpanded_text_show"
+            android:defaultValue="#SynthOS" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>

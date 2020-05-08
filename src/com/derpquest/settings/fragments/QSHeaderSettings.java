@@ -41,6 +41,7 @@ import com.android.settingslib.search.SearchIndexable;
 
 import com.derpquest.settings.preferences.SystemSettingListPreference;
 import com.derpquest.settings.preferences.SystemSettingSwitchPreference;
+import com.derpquest.settings.preferences.SystemSettingEditTextPreference;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
@@ -57,9 +58,11 @@ public class QSHeaderSettings extends SettingsPreferenceFragment implements
 
     private static final String QS_HIDE_BATTERY = "qs_hide_battery";
     private static final String QS_BATTERY_MODE = "qs_battery_mode";
+    private static final String SYNTHUI_QSEXPANDED_TEXT_STRING = "synthui_qsexpanded_text_string";
 
     private SystemSettingSwitchPreference mHideBattery;
     private SystemSettingListPreference mQsBatteryMode;
+    private SystemSettingEditTextPreference mSynthUIExpandedString;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -72,6 +75,19 @@ public class QSHeaderSettings extends SettingsPreferenceFragment implements
         mQsBatteryMode = (SystemSettingListPreference) findPreference(QS_BATTERY_MODE);
         mHideBattery = (SystemSettingSwitchPreference) findPreference(QS_HIDE_BATTERY);
         mHideBattery.setOnPreferenceChangeListener(this);
+
+        mSynthUIExpandedString = (SystemSettingEditTextPreference) findPreference(SYNTHUI_QSEXPANDED_TEXT_STRING);
+        mSynthUIExpandedString.setOnPreferenceChangeListener(this);
+        String synthuiExpandedString = Settings.System.getString(resolver,
+                SYNTHUI_QSEXPANDED_TEXT_STRING);
+        if (synthuiExpandedString != null && synthuiExpandedString != "")
+            mSynthUIExpandedString.setText(synthuiExpandedString);
+        else {
+            mSynthUIExpandedString.setText("#SynthOS");
+            Settings.System.putString(resolver,
+                    Settings.System.SYNTHUI_QSEXPANDED_TEXT_STRING, "#SynthOS");
+        }
+
     }
 
     @Override
@@ -82,6 +98,17 @@ public class QSHeaderSettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(resolver,
                     Settings.System.QS_HIDE_BATTERY, value ? 1 : 0);
             mQsBatteryMode.setEnabled(!value);
+            return true;
+        } else if (preference == mSynthUIExpandedString) {
+            String value = (String) newValue;
+            if (value != "" && value != null)
+                Settings.System.putString(resolver,
+                        Settings.System.SYNTHUI_QSEXPANDED_TEXT_STRING, value);
+            else {
+                mSynthUIExpandedString.setText("#SynthOS");
+                Settings.System.putString(resolver,
+                        Settings.System.SYNTHUI_QSEXPANDED_TEXT_STRING, "#SynthOS");
+            }
             return true;
         }
         return false;
