@@ -84,6 +84,21 @@
             android:summary="@string/synthos_lock_cool_divider_show_summary"
             android:defaultValue="true" />
 
+            <com.derpquest.settings.preferences.SystemSettingSwitchPreference
+                android:key="synthos_align_lockscreen_left"
+                android:title="@string/synthos_align_lockscreen_left_title"
+                android:summary="@string/synthos_align_lockscreen_left_summary"
+                android:defaultValue="false" />
+
+            <com.derpquest.settings.preferences.SystemSettingSeekBarPreference
+                android:key="synthos_align_left_margin"
+                android:title="@string/synthos_align_lockscreen_left_margin"
+                android:max="100"
+                android:min="0"
+                android:dependency="synthos_align_lockscreen_left"
+                settings:units="dp"
+                android:defaultValue="55" />
+
     </PreferenceCategory>
 
     <PreferenceCategory

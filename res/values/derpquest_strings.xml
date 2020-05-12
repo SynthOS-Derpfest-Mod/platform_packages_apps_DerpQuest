@@ -1248,4 +1248,9 @@
     <string name="synthos_center_notification_headers_title">Center notification headers</string>
     <string name="synthos_center_notification_headers_summary">Whether to Center R style notification headers (Requires a SystemUI restart)</string>
 
+    <!-- Align to left lockscreen items -->
+    <string name="synthos_align_lockscreen_left_title">Align Lockscreen Items to Left</string>
+    <string name="synthos_align_lockscreen_left_summary">Align to left or center the lockscreen items</string>
+    <string name="synthos_align_lockscreen_left_margin">Left Edge Margin</string>
+
 </resources>
