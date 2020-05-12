@@ -988,6 +988,9 @@
     <string name="sb_battery_bar_high_color">High level color"</string>
     <string name="sb_battery_bar_low_color">Low level color"</string>
 
+    <string name="enable_clear_all_button">Replace clear all text with nice button</string>
+    <string name="enable_clear_all_button_summary">Show clear all notifications button in quick settings instead of default text one</string>
+
     <string name="brightness_slider_qs_unexpanded">MIUI style brightness slider (beta)</string>
     <string name="brightness_slider_qs_unexpanded_summary">Shows brightness slider below qs panel</string>
 
