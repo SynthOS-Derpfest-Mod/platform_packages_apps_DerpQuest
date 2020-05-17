@@ -1274,4 +1274,9 @@
     <string name="synthui_qsexpanded_text_string_title">Customize text</string>
     <string name="synthui_qsexpanded_text_string_summary">Set to empty for default #SynthOS</string>
 
+    <string name="synthos_volume_panel_theme_title">Volume Panel Theme</string>
+    <string name="synthos_volume_panel_theme_summary">Reboot SystemUI to apply volume panel theme</string>
+    <string name="synthos_volume_panel_theme_default">MIUI (Default) (ExtendedUI)</string>
+    <string name="synthos_volume_panel_theme_aosp">AOSP</string>
+
 </resources>
