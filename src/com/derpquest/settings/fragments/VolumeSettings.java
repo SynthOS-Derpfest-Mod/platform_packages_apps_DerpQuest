@@ -15,9 +15,17 @@
  */
 package com.derpquest.settings.fragments;
 
+import android.app.Activity;
+import android.app.WallpaperManager;
+import android.content.ContentResolver;
 import android.content.Context;
+import android.content.Intent;
+import android.content.res.Resources;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.UserHandle;
 import android.provider.SearchIndexableResource;
+import android.provider.Settings;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
@@ -26,23 +34,58 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
 
+import androidx.preference.ListPreference;
+import androidx.preference.Preference;
+import androidx.preference.Preference.OnPreferenceChangeListener;
+import androidx.preference.PreferenceCategory;
+import androidx.preference.PreferenceScreen;
+import androidx.preference.SwitchPreference;
+
 import java.util.ArrayList;
 import java.util.List;
 
 @SearchIndexable
 public class VolumeSettings extends SettingsPreferenceFragment
-         implements Indexable {
+         implements Preference.OnPreferenceChangeListener, Indexable {
+
+    private ListPreference mVolumePanelTheme;
+    private static final String SYNTHOS_VOLUME_PANEL_THEME = "synthos_volume_panel_theme";
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
 
         addPreferencesFromResource(R.xml.derpquest_settings_volume);
+
+        ContentResolver resolver = getActivity().getContentResolver();
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+        Resources resources = getResources();
+
+        // set volume panel theme
+        mVolumePanelTheme = (ListPreference) findPreference(SYNTHOS_VOLUME_PANEL_THEME);
+        int style = Settings.System.getInt(resolver,
+                Settings.System.SYNTHOS_VOLUME_PANEL_THEME, 0);
+        mVolumePanelTheme.setValue(String.valueOf(style));
+        mVolumePanelTheme.setSummary(mVolumePanelTheme.getEntry());
+        mVolumePanelTheme.setOnPreferenceChangeListener(this);
     }
 
     @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.OWLSNEST;
+    }
+
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mVolumePanelTheme) {
+            int style = Integer.valueOf((String) newValue);
+            int index = mVolumePanelTheme.findIndexOfValue((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.SYNTHOS_VOLUME_PANEL_THEME, style);
+            mVolumePanelTheme.setSummary(mVolumePanelTheme.getEntries()[index]);
+            return true;
+        }
+        return false;
     }
 
     public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
