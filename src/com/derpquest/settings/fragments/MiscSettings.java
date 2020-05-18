@@ -118,7 +118,7 @@ public class MiscSettings extends SettingsPreferenceFragment implements
       mSelinuxPersistence.setOnPreferenceChangeListener(this);
       mSelinuxPersistence.setChecked(getContext()
           .getSharedPreferences("selinux_pref", Context.MODE_PRIVATE)
-          .contains(PREF_SELINUX_MODE));
+          .contains(PREF_SELINUX_MODE));  
 
       // Disabling root required switches if unrooted and letting the user know
       if (!Utils.isRooted(getContext())) {
