@@ -22,6 +22,7 @@ import android.app.WallpaperManager;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.pm.ResolveInfo;
 import android.content.res.Resources;
 import android.hardware.fingerprint.FingerprintManager;
 import android.net.Uri;
@@ -37,6 +38,7 @@ import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
 
 import com.android.internal.logging.nano.MetricsProto;
+import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.R;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
@@ -47,6 +49,8 @@ import com.derpquest.settings.preferences.CustomSeekBarPreference;
 import com.derpquest.settings.preferences.SecureSettingMasterSwitchPreference;
 import com.derpquest.settings.preferences.SystemSettingListPreference;
 import com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference;
+import com.derpquest.settings.preferences.SystemSettingEditTextPreference;
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -76,12 +80,32 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
     private static final String MEDIA_ART = "lockscreen_media_metadata";
     private static final String LOCKSCREEN_VISUALIZER_ENABLED = "lockscreen_visualizer_enabled";
 
+    private static final String SYNTHOS_AMBIENT_TEXT_STRING = "synthos_ambient_text_string";
+    private static final String SYNTHOS_AMBIENT_TEXT_ALIGNMENT = "synthos_ambient_text_alignment";
+    private static final String SYNTHOS_AMBIENT_TEXT_FONT = "synthos_ambient_text_font";
+    private static final String SYNTHOS_AMBIENT_TEXT_TYPE_COLOR = "synthos_ambient_text_type_color";
+    private static final String SYNTHOS_AMBIENT_TEXT_COLOR = "synthos_ambient_text_color";
+    private static final String FILE_AMBIENT_SELECT = "file_ambient_select";
+
+    private static final int REQUEST_PICK_IMAGE = 0;
+
+    private CustomSeekBarPreference mPulseBrightness;
+    private CustomSeekBarPreference mDozeBrightness;
+
     private SystemSettingMasterSwitchPreference mBatteryInfo;
     private SystemSettingMasterSwitchPreference mBatteryBar;
     private SystemSettingMasterSwitchPreference mClockEnabled;
     private SystemSettingMasterSwitchPreference mInfoEnabled;
     private SystemSettingMasterSwitchPreference mMediaArt;
     private SecureSettingMasterSwitchPreference mVisualizerEnabled;
+
+    private SystemSettingEditTextPreference mAmbientText;
+    private ListPreference mAmbientTextAlign;
+    private ListPreference mAmbientTextFonts;
+    private ListPreference mAmbientTextTypeColor;
+    private ColorPickerPreference mAmbientTextColor;
+
+    private Preference mAmbientImage;
 
     private FingerprintManager mFingerprintManager;
     private PreferenceCategory mFODIconPickerCategory;
@@ -180,7 +204,58 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
                 && !getResources().getBoolean(com.android.internal.R.bool.config_needCustomFODView))
             prefScreen.removePreference(mFODIconPickerCategory);
 
+        mAmbientText = (SystemSettingEditTextPreference) findPreference(SYNTHOS_AMBIENT_TEXT_STRING);
+        mAmbientText.setOnPreferenceChangeListener(this);
+
+        // set ambient text alignment
+        mAmbientTextAlign = (ListPreference) findPreference(SYNTHOS_AMBIENT_TEXT_ALIGNMENT);
+        int align = Settings.System.getInt(resolver,
+                Settings.System.SYNTHOS_AMBIENT_TEXT_ALIGNMENT, 3);
+        mAmbientTextAlign.setValue(String.valueOf(align));
+        mAmbientTextAlign.setSummary(mAmbientTextAlign.getEntry());
+        mAmbientTextAlign.setOnPreferenceChangeListener(this);
+
+        // ambient text Fonts
+        mAmbientTextFonts = (ListPreference) findPreference(SYNTHOS_AMBIENT_TEXT_FONT);
+        mAmbientTextFonts.setValue(String.valueOf(Settings.System.getInt(
+                getContentResolver(), Settings.System.SYNTHOS_AMBIENT_TEXT_FONT, 8)));
+        mAmbientTextFonts.setSummary(mAmbientTextFonts.getEntry());
+        mAmbientTextFonts.setOnPreferenceChangeListener(this);
+
+        // ambient text color type
+        mAmbientTextTypeColor = (ListPreference) findPreference(SYNTHOS_AMBIENT_TEXT_TYPE_COLOR);
+        mAmbientTextTypeColor.setValue(String.valueOf(Settings.System.getInt(
+                getContentResolver(), Settings.System.SYNTHOS_AMBIENT_TEXT_TYPE_COLOR, 0)));
+        mAmbientTextTypeColor.setSummary(mAmbientTextTypeColor.getEntry());
+        mAmbientTextTypeColor.setOnPreferenceChangeListener(this);
+
+        mAmbientTextColor = (ColorPickerPreference) findPreference(SYNTHOS_AMBIENT_TEXT_COLOR);
+        mAmbientTextColor.setOnPreferenceChangeListener(this);
+        int ambientTextColor = Settings.System.getInt(getContentResolver(),
+                Settings.System.SYNTHOS_AMBIENT_TEXT_COLOR, 0xFF3980FF);
+        String ambientTextColorHex = String.format("#%08x", (0xFF3980FF & ambientTextColor));
+        if (ambientTextColorHex.equals("#ff3980ff")) {
+            mAmbientTextColor.setSummary(R.string.default_string);
+        } else {
+            mAmbientTextColor.setSummary(ambientTextColorHex);
+        }
+        mAmbientTextColor.setNewPreviewColor(ambientTextColor);
+
+        mAmbientImage = findPreference(FILE_AMBIENT_SELECT);
+
+
         skipSummaryUpdate = true; // avoid being called twice on onResume
+    }
+
+    @Override
+    public boolean onPreferenceTreeClick(Preference preference) {
+        if (preference == mAmbientImage) {
+            Intent intent = new Intent(Intent.ACTION_PICK);
+            intent.setType("image/*");
+            startActivityForResult(intent, REQUEST_PICK_IMAGE);
+            return true;
+        }
+        return super.onPreferenceTreeClick(preference);
     }
 
     @Override
@@ -260,6 +335,42 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
             int value = (Integer) newValue;
             Settings.System.putInt(resolver,
                     Settings.System.FOD_SOLID_COLOR, value);
+            return true;
+        } else if (preference == mAmbientText) {
+            String value = (String) newValue;
+            Settings.System.putString(resolver,
+                    Settings.System.SYNTHOS_AMBIENT_TEXT_STRING, value);
+            return true;
+        } else if (preference == mAmbientTextAlign) {
+            int align = Integer.valueOf((String) newValue);
+            int index = mAmbientTextAlign.findIndexOfValue((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.SYNTHOS_AMBIENT_TEXT_ALIGNMENT, align);
+            mAmbientTextAlign.setSummary(mAmbientTextAlign.getEntries()[index]);
+            return true;
+        } else if (preference == mAmbientTextFonts) {
+            Settings.System.putInt(getContentResolver(), Settings.System.SYNTHOS_AMBIENT_TEXT_FONT,
+                    Integer.valueOf((String) newValue));
+            mAmbientTextFonts.setValue(String.valueOf(newValue));
+            mAmbientTextFonts.setSummary(mAmbientTextFonts.getEntry());
+            return true;
+        } else if (preference == mAmbientTextTypeColor) {
+            Settings.System.putInt(getContentResolver(), Settings.System.SYNTHOS_AMBIENT_TEXT_TYPE_COLOR,
+                    Integer.valueOf((String) newValue));
+            mAmbientTextTypeColor.setValue(String.valueOf(newValue));
+            mAmbientTextTypeColor.setSummary(mAmbientTextTypeColor.getEntry());
+            return true;
+        } else if (preference == mAmbientTextColor) {
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            if (hex.equals("#ff3980ff")) {
+                preference.setSummary(R.string.default_string);
+            } else {
+                preference.setSummary(hex);
+            }
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.SYNTHOS_AMBIENT_TEXT_COLOR, intHex);
             return true;
         }
         return false;
@@ -381,6 +492,17 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         } catch (Exception e) {
             Log.e(TAG, "Translation error in lockscreen_visualizer_enable_summary");
             mVisualizerEnabled.setSummary(res.getString(R.string.translation_error));
+        }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent result) {
+        if (requestCode == REQUEST_PICK_IMAGE) {
+            if (resultCode != Activity.RESULT_OK) {
+                return;
+            }
+            final Uri imageUri = result.getData();
+            Settings.System.putString(getContentResolver(), Settings.System.SYNTHOS_AMBIENT_CUSTOM_IMAGE, imageUri.toString());
         }
     }
 

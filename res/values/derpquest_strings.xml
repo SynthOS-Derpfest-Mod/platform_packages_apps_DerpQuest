@@ -1291,6 +1291,29 @@
     <string name="synthos_volume_panel_theme_default">MIUI (Default) (ExtendedUI)</string>
     <string name="synthos_volume_panel_theme_aosp">AOSP</string>
 
+    <string name="synthos_ambient_text_category_title">Ambient-Synth</string>
+    <string name="synthos_ambient_text_title">Ambient Text</string>
+    <string name="synthos_ambient_text_summary">Show Ambient Text in AoD</string>
+    <string name="synthos_ambient_text_animation_title">Ambient Text Animation</string>
+    <string name="synthos_ambient_text_animation_summary">Show a Animation when show AoD</string>
+    <string name="synthos_ambient_text_size_title">Ambient Text Size</string>
+    <string name="synthos_ambient_text_font_title">Ambient Text Font</string>
+    <string name="synthos_ambient_text_string_title">Set Ambient Text</string>
+
+    <string name="synthos_ambient_text_align_title">Ambient Text Align</string>
+    <string name="synthos_ambient_text_align_start_top">Right n Top</string>
+    <string name="synthos_ambient_text_align_start_center">Right n Center</string>
+    <string name="synthos_ambient_text_align_start_bottom">Right n Bottom</string>
+    <string name="synthos_ambient_text_align_center">Center</string>
+    <string name="synthos_ambient_text_align_end_top">Left n Top</string>
+    <string name="synthos_ambient_text_align_end_center">Left n Center</string>
+    <string name="synthos_ambient_text_align_end_bottom">Left n Bottom</string>
+
+    <string name="synthos_ambient_text_type_color_title">Ambient Text Type Color</string>
+    <string name="synthos_ambient_text_color_title">Ambient Text Color</string>
+
+    <string name="synthos_ambient_image_title">Ambient Image</string>
+
     <string name="synthos_music_volume_panel_text_title">Music Text</string>
     <string name="synthos_music_volume_panel_text_summary">Show Music Text in left of VolumePanel</string>
 
