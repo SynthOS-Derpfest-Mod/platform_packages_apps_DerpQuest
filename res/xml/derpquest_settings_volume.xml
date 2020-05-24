@@ -36,6 +36,11 @@
         android:summary="@string/synthos_hide_things_volumepanel_summary"
         android:title="@string/synthos_hide_things_volumepanel_title"
         android:defaultValue="true" />
+         <com.derpquest.settings.preferences.SystemSettingSwitchPreference
+            android:key="synthos_music_volume_panel_text"
+            android:summary="@string/synthos_music_volume_panel_text_summary"
+            android:title="@string/synthos_music_volume_panel_text_title"
+            android:defaultValue="true" />
     </PreferenceCategory>
 
     <PreferenceCategory
