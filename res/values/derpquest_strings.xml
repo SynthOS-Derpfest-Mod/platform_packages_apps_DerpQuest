@@ -1241,8 +1241,10 @@
     <string name="synthui_category_title">SynthUI</string>
 
     <!-- Volume panel Hide Things-->
-    <string name="synthos_hide_things_volumepanel_title">Hide Things below volume panel</string>
-    <string name="synthos_hide_things_volumepanel_summary">Hide Settings and Ringer Container below volume panel</string>
+    <string name="synthos_hide_ringer_volumepanel_title">Hide Ringer below volume panel</string>
+    <string name="synthos_hide_ringer_volumepanel_summary">Hide Ringer Container below volume panel</string>
+    <string name="synthos_hide_extended_volumepanel_title">Hide Extended below volume panel</string>
+    <string name="synthos_hide_extended_volumepanel_summary">Hide Extended Container below volume panel</string>
 
     <!-- Center R Notification headers -->
     <string name="synthos_center_notification_headers_title">Center notification headers</string>
@@ -1273,6 +1275,16 @@
     <string name="synthui_qsexpanded_text_show_title">Show QS expanded text</string>
     <string name="synthui_qsexpanded_text_string_title">Customize text</string>
     <string name="synthui_qsexpanded_text_string_summary">Set to empty for default #SynthOS</string>
+
+    <string name="synthos_volume_panel_category_title">SynthOS - Volume Panel</string>
+
+    <string name="synthos_volume_panel_padding_top_title">Volume Panel Padding Top</string>
+    <string name="synthos_volume_panel_padding_bottom_title">Volume Panel Padding Bottom</string>
+
+    <string name="synthos_volume_panel_alignment_title">Volume Panel Alignment</string>
+    <string name="volume_panel_alignment_top">Top</string>
+    <string name="volume_panel_alignment_center">Center</string>
+    <string name="volume_panel_alignment_bottom">Bottom</string>
 
     <string name="synthos_volume_panel_theme_title">Volume Panel Theme</string>
     <string name="synthos_volume_panel_theme_summary">Reboot SystemUI to apply volume panel theme</string>
