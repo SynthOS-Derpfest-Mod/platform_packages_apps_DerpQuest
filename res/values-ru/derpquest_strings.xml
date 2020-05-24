@@ -330,11 +330,14 @@
     <!-- Status bar - Battery -->
     <string name="status_bar_battery_style_title">Стиль батареи</string>
     <string name="status_bar_battery_style_q">Портрет (по умолчанию)</string>
-    <string name="status_bar_battery_style_dotted_circle">Точечный круг</string>
-    <string name="status_bar_battery_style_circle">Заполненный круг</string>
+    <string name="status_bar_battery_style_dotted_circle">Точечная окружность</string>
+    <string name="status_bar_battery_style_circle">Окружность</string>
+    <string name="status_bar_battery_style_big_circle">Большая окружность</string>
+    <string name="status_bar_battery_style_filled_circle">Круг</string>
     <string name="status_bar_battery_style_text">Текст</string>
     <string name="status_bar_battery_style_hidden">Скрытый</string>
     <string name="battery_percent_title">Процент заряда батареи</string>
+
     <!-- Status bar - Battery percentage -->
     <string name="status_bar_battery_percentage_title">Процент заряда батареи</string>
     <string name="status_bar_battery_percentage_default">Скрытый (по умолчанию)</string>
@@ -692,6 +695,8 @@
     <string name="status_bar_show_ticker_title">Тикер (бета)</string>
     <string name="status_bar_show_ticker_summary">Настройка предварительного просмотра уведомлений в строке состояния</string>
     <string name="ticker_animation_mode_title">Анимация тикера</string>
+    <string name="status_bar_ticker_music_title">Тикер музыки</string>
+    <string name="status_bar_ticker_music_summary">Показывать тикер при включении нового трека</string>
     <string name="ticker_animation_mode_alpha_fade">Затухание</string>
     <string name="ticker_animation_mode_scroll">Прокрутка</string>
     <string name="ticker_tick_duration_title">Длительность тикера</string>
