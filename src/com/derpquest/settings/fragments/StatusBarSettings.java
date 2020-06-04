@@ -163,7 +163,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
         } else if (preference == mBatteryIconStyle) {
             boolean enabled = (boolean) objValue;
             Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.STATUS_BAR_BATTERY_STYLE, enabled ? 0 : 4);
+                    Settings.System.STATUS_BAR_BATTERY_STYLE, enabled ? 0 : 6);
             return true;
         } else if (preference == mNotificationTicker) {
             boolean enabled = (boolean) objValue;

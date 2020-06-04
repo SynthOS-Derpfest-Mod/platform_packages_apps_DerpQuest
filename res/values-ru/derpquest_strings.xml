@@ -862,8 +862,8 @@
     <string name="sb_battery_bar_reversed">Перевернутый</string>
     <string name="sb_battery_bar_use_gradient_color">Использовать градиент</string>
     <string name="sb_battery_bar_gradient_color_summary">Использовать градиент в качестве шкалы для уровня заряда батареи</string>
-    <string name="sb_battery_bar_high_color">Высокоуровневый цвет\"</string>
-    <string name="sb_battery_bar_low_color">Низкоуровневый цвет\"</string>
+    <string name="sb_battery_bar_high_color">Цвет при высоком уровне заряда</string>
+    <string name="sb_battery_bar_low_color">Цвет при низком уровне заряда</string>
     <!-- Selinux Switch -->
     <string name="selinux_category">SELinux</string>
     <string name="selinux_explanation_summary">SELinux — это набор модификаций ядра и инструментов пользовательского пространства. Изменение режимов может привести к нежелательным последствиям. Используйте на свой страх и риск.</string>

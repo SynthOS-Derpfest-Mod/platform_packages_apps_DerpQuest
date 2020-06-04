@@ -68,7 +68,6 @@ public class MiscSettings extends SettingsPreferenceFragment implements
     private SwitchPreference mSelinuxMode;
     private SwitchPreference mSelinuxPersistence;
 
-
     @Override
     public void onCreate(Bundle icicle) {
       super.onCreate(icicle);
@@ -111,22 +110,24 @@ public class MiscSettings extends SettingsPreferenceFragment implements
       Preference selinuxExp = findPreference(SELINUX_EXPLANATION);
       mSelinuxMode = (SwitchPreference) findPreference(PREF_SELINUX_MODE);
       mSelinuxMode.setChecked(SELinux.isSELinuxEnforced());
-      mSelinuxMode.setOnPreferenceChangeListener(this);
 
       mSelinuxPersistence =
           (SwitchPreference) findPreference(PREF_SELINUX_PERSISTENCE);
-      mSelinuxPersistence.setOnPreferenceChangeListener(this);
       mSelinuxPersistence.setChecked(getContext()
           .getSharedPreferences("selinux_pref", Context.MODE_PRIVATE)
           .contains(PREF_SELINUX_MODE));  
 
       // Disabling root required switches if unrooted and letting the user know
       if (!Utils.isRooted(getContext())) {
+        Log.e(TAG, "Root not found");
         mSelinuxMode.setEnabled(false);
         mSelinuxPersistence.setEnabled(false);
         mSelinuxPersistence.setChecked(false);
         selinuxExp.setSummary(selinuxExp.getSummary() + "\n" +
             getResources().getString(R.string.selinux_unrooted_summary));
+      } else {
+        mSelinuxPersistence.setOnPreferenceChangeListener(this);
+        mSelinuxMode.setOnPreferenceChangeListener(this);
       }
     }
 

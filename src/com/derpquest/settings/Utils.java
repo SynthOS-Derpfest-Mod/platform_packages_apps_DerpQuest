@@ -232,12 +232,17 @@ public final class Utils {
      */
     public static boolean isRooted(Context context) {
         // check by existence of magisk app
-        if (isPackageInstalled(context, MAGISK_APP, false))
-            return true;
+        try {
+            PackageManager pm = context.getPackageManager();
+            if (isPackageInstalled(context, MAGISK_APP, false) &&
+                    isSystemPackage(pm, pm.getPackageInfo(MAGISK_APP, 0))) {
+                return true;
+            }
+        } catch (NameNotFoundException e) { /* Do nothing */ }
 
         // check by existence of su binary
         try {
-            Runtime.getRuntime().exec("which su");
+            Runtime.getRuntime().exec("su -c echo");
             return true;
         } catch (Exception e) {
             Log.i(TAG, "su binaries not found");
