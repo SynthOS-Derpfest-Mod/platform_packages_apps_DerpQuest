@@ -174,6 +174,7 @@
     <string name="battery_light_reallyfull_color">Full (100) battery</string>
 
     <string name="led_category">LED</string>
+    <string name="flashlight_category">Flashlight</string>
     <string name="onscreen_category">On-Screen</string>
     <string name="notification_light_settings">Notifications light</string>
 
@@ -574,11 +575,6 @@
     <!-- smart notifications -->
     <string name="notification_sound_vib_screen_on_title">Noisy notifications if screen on</string>
     <string name="notification_sound_vib_screen_on_summary">Disable to block notifications sound and vibration when the screen is awake</string>
-
-    <!-- flash on call waiting -->
-    <string name="flash_on_call_category">Pulse flash</string>
-    <string name="flash_on_call_title">Pulse flash on incoming call</string>
-    <string name="flash_on_call_delay_title">Flash pulse rate</string>
 
     <!-- Force expanded notifications -->
     <string name="force_expanded_notifications_title">Force expanded notifications</string>
@@ -1011,6 +1007,10 @@
     <string name="about_device_recovery_ver" translatable="false"></string> <!-- Recovery version -->
     <string name="about_device_recovery_link" translatable="false"></string> <!-- Recovery link -->
 
+    <!-- The Drill -->
+    <string name="the_drill_title">The Drill</string>
+    <string name="the_drill_summary">Found a bug? Ran into an issue?</string>
+
     <!-- Heads up -->
     <string name="heads_up_settings_title">Heads up</string>
     <string name="heads_up_settings_summary">Configure heads up timeout, snooze timer and more</string>
@@ -1065,6 +1065,24 @@
     <string name="selinux_enforcing_toast_title">Selinux set to enforcing!</string>
     <string name="selinux_unrooted_summary">Couldn\'t detect root. You must have root to use these switches</string>
     <string name="cannot_get_su">Action failed because of missing superuser access</string>
+
+    <!-- Blink flashlight for incoming calls -->
+    <string name="flashlight_on_call_title">Blink Flashlight for incoming call</string>
+    <string name="flashlight_on_call_disabled">Disabled</string>
+    <string name="flashlight_on_call_ringer">When ringing</string>
+    <string name="flashlight_on_call_no_ringer">When ringer is silent</string>
+    <string name="flashlight_on_call_silent">When entirely silent (no ringer or vibrator)</string>
+    <string name="flashlight_on_call_always">Always</string>
+    <string name="flashlight_on_call_ignore_dnd_title">Ignore DND</string>
+    <string name="flashlight_on_call_ignore_dnd_summary">Whether to flash when in Do Not Disturb mode</string>
+    <string name="flashlight_on_call_rate_title">Rate</string>
+    <string name="flashlight_on_call_rate_summary">Flashlight on call blink rate</string>
+
+    <!-- QS Header Data Usage -->
+    <string name="qs_datausage_title">Data Usage in QS Header</string>
+    <string name="qs_datausage_disabled">Disabled</string>
+    <string name="qs_datausage_daily">Daily usage</string>
+    <string name="qs_datausage_monthly">Monthly usage</string>
 
     <string name="enable_clear_all_button">Replace clear all text with nice button</string>
     <string name="enable_clear_all_button_summary">Show clear all notifications button in quick settings instead of default text one</string>
