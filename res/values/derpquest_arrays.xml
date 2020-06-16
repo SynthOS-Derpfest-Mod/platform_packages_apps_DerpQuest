@@ -831,10 +831,10 @@
     <!-- QS Header Data Usage -->
     <string-array name="qs_datausage_entries" translatable="false">
         <item>@string/qs_datausage_disabled</item>
-        <item>@string/qs_datausage_daily</item> 
+        <item>@string/qs_datausage_daily</item>
         <item>@string/qs_datausage_monthly</item>
     </string-array>
-    <string-array name="qs_datausage_values" translatable="false"> 
+    <string-array name="qs_datausage_values" translatable="false">
         <item>0</item>
         <item>1</item>
         <item>2</item>
@@ -855,11 +855,13 @@
         <item>@string/synthos_volume_panel_theme_default</item>
         <item>@string/synthos_volume_panel_theme_aosp</item>
         <item>@string/synthos_volume_panel_theme_aosp_rounded</item>
+        <item>@string/synthos_volume_panel_theme_aospa</item>
     </string-array>
      <string-array name="volume_theme_values" translatable="false">
         <item>0</item>
         <item>1</item>
         <item>2</item>
+        <item>3</item>
     </string-array>
 
     <!-- Volume Panel Alignment -->
