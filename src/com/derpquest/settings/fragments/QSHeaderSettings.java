@@ -58,11 +58,15 @@ public class QSHeaderSettings extends SettingsPreferenceFragment implements
 
     private static final String QS_HIDE_BATTERY = "qs_hide_battery";
     private static final String QS_BATTERY_MODE = "qs_battery_mode";
+    private static final String SYNTHUI_FONT_CLOCK_QSEXPANDED = "synthui_font_clock_qsexpanded";
+    private static final String SYNTHUI_FONT_DATE_QSEXPANDED = "synthui_font_date_qsexpanded";
     private static final String SYNTHUI_QSEXPANDED_TEXT_STRING = "synthui_qsexpanded_text_string";
 
     private SystemSettingSwitchPreference mHideBattery;
     private SystemSettingListPreference mQsBatteryMode;
     private SystemSettingEditTextPreference mSynthUIExpandedString;
+    private ListPreference mClockFonts;
+    private ListPreference mDateFonts;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -88,6 +92,20 @@ public class QSHeaderSettings extends SettingsPreferenceFragment implements
                     Settings.System.SYNTHUI_QSEXPANDED_TEXT_STRING, "#SynthOS");
         }
 
+        // Clock Fonts
+        mClockFonts = (ListPreference) findPreference(SYNTHUI_FONT_CLOCK_QSEXPANDED);
+        mClockFonts.setValue(String.valueOf(Settings.System.getInt(
+                getContentResolver(), Settings.System.SYNTHUI_FONT_CLOCK_QSEXPANDED, 28)));
+        mClockFonts.setSummary(mClockFonts.getEntry());
+        mClockFonts.setOnPreferenceChangeListener(this);
+
+        // Date Fonts
+        mDateFonts = (ListPreference) findPreference(SYNTHUI_FONT_DATE_QSEXPANDED);
+        mDateFonts.setValue(String.valueOf(Settings.System.getInt(
+                getContentResolver(), Settings.System.SYNTHUI_FONT_DATE_QSEXPANDED, 28)));
+        mDateFonts.setSummary(mDateFonts.getEntry());
+        mDateFonts.setOnPreferenceChangeListener(this);
+
     }
 
     @Override
@@ -109,6 +127,18 @@ public class QSHeaderSettings extends SettingsPreferenceFragment implements
                 Settings.System.putString(resolver,
                         Settings.System.SYNTHUI_QSEXPANDED_TEXT_STRING, "#SynthOS");
             }
+            return true;
+        } else if (preference == mClockFonts) {
+            Settings.System.putInt(getContentResolver(), Settings.System.SYNTHUI_FONT_CLOCK_QSEXPANDED,
+                    Integer.valueOf((String) newValue));
+            mClockFonts.setValue(String.valueOf(newValue));
+            mClockFonts.setSummary(mClockFonts.getEntry());
+            return true;
+        } else if (preference == mDateFonts) {
+            Settings.System.putInt(getContentResolver(), Settings.System.SYNTHUI_FONT_DATE_QSEXPANDED,
+                    Integer.valueOf((String) newValue));
+            mDateFonts.setValue(String.valueOf(newValue));
+            mDateFonts.setSummary(mDateFonts.getEntry());
             return true;
         }
         return false;
