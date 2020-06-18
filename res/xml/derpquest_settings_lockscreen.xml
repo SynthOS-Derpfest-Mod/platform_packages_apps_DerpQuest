@@ -205,6 +205,25 @@
             android:dependency="synthos_ambient_image" >
         </Preference>
 
+        <com.derpquest.settings.preferences.SystemSettingSwitchPreference
+            android:key="synthos_ambient_video"
+            android:title="@string/synthos_ambient_video_title"
+            android:defaultValue="false" />
+
+        <Preference
+            android:key="file_ambient_video_select"
+            android:title="@string/file_video_select_title"
+            android:summary="@string/file_video_select_summary"
+            android:persistent="false"
+            android:dependency="synthos_ambient_video" >
+        </Preference>
+
+        <com.derpquest.settings.preferences.SystemSettingSwitchPreference
+            android:key="synthos_ambient_video_looping"
+            android:title="@string/synthos_ambient_video_looping_title"
+            android:dependency="synthos_ambient_video"
+            android:defaultValue="true" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
