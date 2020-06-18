@@ -1040,4 +1040,16 @@
         <item>2</item>
     </string-array>
 
+    <!-- SynthUI Color Type -->
+    <string-array name="synthui_color_type_entries" translatable="false">
+        <item>@string/synthui_color_type_default</item>
+        <item>@string/synthui_color_type_accent</item>
+        <item>@string/synthui_color_type_gradient</item>
+    </string-array>
+     <string-array name="synthui_color_type_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
 </resources>
