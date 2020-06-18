@@ -86,8 +86,10 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
     private static final String SYNTHOS_AMBIENT_TEXT_TYPE_COLOR = "synthos_ambient_text_type_color";
     private static final String SYNTHOS_AMBIENT_TEXT_COLOR = "synthos_ambient_text_color";
     private static final String FILE_AMBIENT_SELECT = "file_ambient_select";
+    private static final String FILE_AMBIENT_VIDEO_SELECT = "file_ambient_video_select";
 
     private static final int REQUEST_PICK_IMAGE = 0;
+    private static final int REQUEST_PICK_VIDEO = 1;
 
     private CustomSeekBarPreference mPulseBrightness;
     private CustomSeekBarPreference mDozeBrightness;
@@ -106,6 +108,7 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
     private ColorPickerPreference mAmbientTextColor;
 
     private Preference mAmbientImage;
+    private Preference mAmbientVideo;
 
     private FingerprintManager mFingerprintManager;
     private PreferenceCategory mFODIconPickerCategory;
@@ -242,6 +245,7 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         mAmbientTextColor.setNewPreviewColor(ambientTextColor);
 
         mAmbientImage = findPreference(FILE_AMBIENT_SELECT);
+        mAmbientVideo = findPreference(FILE_AMBIENT_VIDEO_SELECT);
 
 
         skipSummaryUpdate = true; // avoid being called twice on onResume
@@ -253,6 +257,11 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
             Intent intent = new Intent(Intent.ACTION_PICK);
             intent.setType("image/*");
             startActivityForResult(intent, REQUEST_PICK_IMAGE);
+            return true;
+        } else if (preference == mAmbientVideo) {
+            Intent intent = new Intent(Intent.ACTION_PICK);
+            intent.setType("video/*");
+            startActivityForResult(intent, REQUEST_PICK_VIDEO);
             return true;
         }
         return super.onPreferenceTreeClick(preference);
@@ -503,6 +512,12 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
             }
             final Uri imageUri = result.getData();
             Settings.System.putString(getContentResolver(), Settings.System.SYNTHOS_AMBIENT_CUSTOM_IMAGE, imageUri.toString());
+        } else if (requestCode == REQUEST_PICK_VIDEO) {
+            if (resultCode != Activity.RESULT_OK) {
+                return;
+            }
+            final Uri videoUri = result.getData();
+            Settings.System.putString(getContentResolver(), Settings.System.SYNTHOS_AMBIENT_CUSTOM_VIDEO, videoUri.toString());
         }
     }
 
