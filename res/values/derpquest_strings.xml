@@ -61,7 +61,6 @@
     <string name="intensity">Intensity</string>
     <string name="and"> &amp; </string>
     <string name="custom_string">Custom</string>
-    <string name="default_string">Default</string>
 
     <!-- General error strings -->
     <string name="translation_error">Translation error</string>
@@ -1293,7 +1292,10 @@
     <string name="lockscreen_maxnotif_title">Lockscreen notification count</string>
     <string name="lockscreen_maxnotif_sumary">Enable adjustment of max lockscreen notifications</string>
     <string name="lockscreen_maxnotif_config">Max lockscreen notifications</string>
-    
+
+    <!-- Volume dialog timeout -->
+    <string name="volume_dialog_timeout_title">Volume dialog timeout</string>
+
     <!-- SynthUI QSPanel -->
     <string name="synthui_color_type_clock_qsexpanded_title">Select Color Type for Clock</string>
     <string name="synthui_color_type_date_qsexpanded_title">Select Color Type for Date</string>
