@@ -266,6 +266,13 @@
             android:fragment="com.derpquest.settings.fragments.BatteryBarSettings"
             android:defaultValue="true" />
 
+        <!-- Color Options -->
+        <PreferenceScreen
+            android:key="lockscreen_colors"
+            android:title="@string/lockscreen_colors"
+            android:summary="@string/lockscreen_colors_summary"
+            android:fragment="com.derpquest.settings.fragments.LockColors" />
+
         <!-- Clock Options -->
         <com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference
             android:key="lockscreen_clock"
