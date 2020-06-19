@@ -49,6 +49,13 @@
             android:summary="@string/gradient_color_summary"
             android:persistent="false" />
 
+        <ListPreference
+            android:key="qs_header_style"
+            android:title="@string/qs_header_style_title"
+            android:persistent="false"
+            android:entries="@array/qs_header_style_entries"
+            android:entryValues="@array/qs_header_style_values" />
+
     </PreferenceCategory>
 
     <PreferenceCategory

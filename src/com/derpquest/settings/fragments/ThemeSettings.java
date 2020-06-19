@@ -70,6 +70,7 @@ public class ThemeSettings extends SettingsPreferenceFragment implements
     private static final String SYSUI_ROUNDED_CONTENT_PADDING = "sysui_rounded_content_padding";
     private static final String SYSUI_STATUS_BAR_PADDING = "sysui_status_bar_padding";
     private static final String SYSUI_ROUNDED_FWVALS = "sysui_rounded_fwvals";
+    private static final String QS_HEADER_STYLE = "qs_header_style";
 
     private Preference mThemeBrowse;
     private IOverlayManager mOverlayService;
@@ -80,6 +81,7 @@ public class ThemeSettings extends SettingsPreferenceFragment implements
     private CustomSeekBarPreference mContentPadding;
     private CustomSeekBarPreference mSBPadding;
     private SwitchPreference mRoundedFwvals;
+    private ListPreference mQsHeaderStyle;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -116,6 +118,14 @@ public class ThemeSettings extends SettingsPreferenceFragment implements
         mThemeColor.setOnPreferenceChangeListener(this);
 
         setupGradientPref();
+
+        mQsHeaderStyle = (ListPreference) findPreference(QS_HEADER_STYLE);
+        int qsHeaderStyle = Settings.System.getInt(ctx.getContentResolver(),
+                Settings.System.QS_HEADER_STYLE, 0);
+        int valueIndex = mQsHeaderStyle.findIndexOfValue(String.valueOf(qsHeaderStyle));
+        mQsHeaderStyle.setValueIndex(valueIndex >= 0 ? valueIndex : 0);
+        mQsHeaderStyle.setSummary(mQsHeaderStyle.getEntry());
+        mQsHeaderStyle.setOnPreferenceChangeListener(this);
 
         // Rounded Corner Radius
         mCornerRadius = (CustomSeekBarPreference) findPreference(SYSUI_ROUNDED_SIZE);
@@ -198,6 +208,12 @@ public class ThemeSettings extends SettingsPreferenceFragment implements
                  mOverlayService.reloadAssets("com.android.systemui", UserHandle.USER_CURRENT);
             } catch (RemoteException ignored) {
             }
+        } else if (preference == mQsHeaderStyle) {
+            int value = Integer.valueOf((String) newValue);
+            int newIndex = mQsHeaderStyle.findIndexOfValue((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+			             Settings.System.QS_HEADER_STYLE, value);
+            mQsHeaderStyle.setSummary(mQsHeaderStyle.getEntries()[newIndex]);
         }
         return true;
     }

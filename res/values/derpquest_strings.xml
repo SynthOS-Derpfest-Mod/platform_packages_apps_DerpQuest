@@ -1175,6 +1175,14 @@
     <string name="power_menu_bg_summary">Enables Custom filter when powermenu is active</string>
     <string name="power_menu_bg_style_title">Filter Type</string>
 
+    <!-- QS header styles -->
+    <string name="qs_header_style_title">QS Header style</string>
+    <string name="qs_header_black">Black</string>
+    <string name="qs_header_grey">Grey</string>
+    <string name="qs_header_lightgrey">Light Grey</string>
+    <string name="qs_header_accent">Accent Based</string>
+    <string name="qs_header_transparent">Transparent</string>
+
     <!-- SynthUI QSPanel -->
     <string name="synthui_color_type_clock_qsexpanded_title">Select Color Type for Clock</string>
     <string name="synthui_color_type_date_qsexpanded_title">Select Color Type for Date</string>
