@@ -1289,6 +1289,11 @@
     <string name="lockscreen_weather_icon_color">Weather Icon Color</string>
     <string name="yes">Yes</string>
 
+    <!-- Lockscreen notif count -->
+    <string name="lockscreen_maxnotif_title">Lockscreen notification count</string>
+    <string name="lockscreen_maxnotif_sumary">Enable adjustment of max lockscreen notifications</string>
+    <string name="lockscreen_maxnotif_config">Max lockscreen notifications</string>
+    
     <!-- SynthUI QSPanel -->
     <string name="synthui_color_type_clock_qsexpanded_title">Select Color Type for Clock</string>
     <string name="synthui_color_type_date_qsexpanded_title">Select Color Type for Date</string>

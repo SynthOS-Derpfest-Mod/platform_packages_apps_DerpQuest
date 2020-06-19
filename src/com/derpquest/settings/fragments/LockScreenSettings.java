@@ -79,6 +79,7 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
     private static final String LOCKSCREEN_INFO = "lockscreen_info";
     private static final String MEDIA_ART = "lockscreen_media_metadata";
     private static final String LOCKSCREEN_VISUALIZER_ENABLED = "lockscreen_visualizer_enabled";
+    private static final String LOCKSCREEN_MAX_NOTIF_CONFIG = "lockscreen_max_notif_cofig";
 
     private static final String SYNTHOS_AMBIENT_TEXT_STRING = "synthos_ambient_text_string";
     private static final String SYNTHOS_AMBIENT_TEXT_ALIGNMENT = "synthos_ambient_text_alignment";
@@ -93,6 +94,7 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
 
     private CustomSeekBarPreference mPulseBrightness;
     private CustomSeekBarPreference mDozeBrightness;
+    private CustomSeekBarPreference mMaxKeyguardNotifConfig;
 
     private SystemSettingMasterSwitchPreference mBatteryInfo;
     private SystemSettingMasterSwitchPreference mBatteryBar;
@@ -106,7 +108,6 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
     private ListPreference mAmbientTextFonts;
     private ListPreference mAmbientTextTypeColor;
     private ColorPickerPreference mAmbientTextColor;
-
     private Preference mAmbientImage;
     private Preference mAmbientVideo;
 
@@ -244,6 +245,12 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         }
         mAmbientTextColor.setNewPreviewColor(ambientTextColor);
 
+        mMaxKeyguardNotifConfig = (CustomSeekBarPreference) findPreference(LOCKSCREEN_MAX_NOTIF_CONFIG);
+        int kgconf = Settings.System.getInt(getContentResolver(),
+                Settings.System.LOCKSCREEN_MAX_NOTIF_CONFIG, 3);
+        mMaxKeyguardNotifConfig.setValue(kgconf);
+        mMaxKeyguardNotifConfig.setOnPreferenceChangeListener(this);
+
         mAmbientImage = findPreference(FILE_AMBIENT_SELECT);
         mAmbientVideo = findPreference(FILE_AMBIENT_VIDEO_SELECT);
 
@@ -380,6 +387,11 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
             int intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putInt(getContentResolver(),
                     Settings.System.SYNTHOS_AMBIENT_TEXT_COLOR, intHex);
+            return true;
+        } else if (preference == mMaxKeyguardNotifConfig) {
+            int kgconf = (Integer) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.LOCKSCREEN_MAX_NOTIF_CONFIG, kgconf);
             return true;
         }
         return false;
