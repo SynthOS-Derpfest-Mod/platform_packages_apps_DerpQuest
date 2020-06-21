@@ -41,4 +41,10 @@
         android:summary="@string/qs_show_secure_summary"
         android:defaultValue="true"/>
 
+    <com.derpquest.settings.preferences.SystemSettingSwitchPreference
+        android:key="hide_qs_tiles"
+        android:title="@string/hide_qs_tiles_title"
+        android:summary="@string/hide_qs_tiles_summary"
+        android:defaultValue="false" />
+
 </PreferenceScreen>
