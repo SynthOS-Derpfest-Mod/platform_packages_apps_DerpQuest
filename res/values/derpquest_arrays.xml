@@ -1011,13 +1011,13 @@
 
     <!-- Ambient Text Alignment -->
     <string-array name="ambient_text_alignment_entries" translatable="false">
-        <item>@string/synthos_ambient_text_align_start_top</item>
-        <item>@string/synthos_ambient_text_align_start_center</item>
-        <item>@string/synthos_ambient_text_align_start_bottom</item>
-        <item>@string/synthos_ambient_text_align_center</item>
         <item>@string/synthos_ambient_text_align_end_top</item>
         <item>@string/synthos_ambient_text_align_end_center</item>
         <item>@string/synthos_ambient_text_align_end_bottom</item>
+        <item>@string/synthos_ambient_text_align_center</item>
+        <item>@string/synthos_ambient_text_align_start_top</item>
+        <item>@string/synthos_ambient_text_align_start_center</item>
+        <item>@string/synthos_ambient_text_align_start_bottom</item>
     </string-array>
      <string-array name="ambient_text_alignment_values" translatable="false">
         <item>0</item>
