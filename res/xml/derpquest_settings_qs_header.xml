@@ -98,6 +98,11 @@
             android:defaultValue="false" />
 
         <com.derpquest.settings.preferences.SystemSettingSwitchPreference
+            android:key="synthui_weather"
+            android:title="@string/synthui_weather_title"
+            android:defaultValue="true" />
+
+        <com.derpquest.settings.preferences.SystemSettingSwitchPreference
             android:key="synthui_qsexpanded_text_show"
             android:title="@string/synthui_qsexpanded_text_show_title"
             android:defaultValue="true" />
