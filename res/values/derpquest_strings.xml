@@ -1369,4 +1369,8 @@
     <string name="synthos_music_volume_panel_text_title">Music Text</string>
     <string name="synthos_music_volume_panel_text_summary">Show Music Text in left of VolumePanel</string>
 
+    <!-- StatusBar notification count -->
+    <string name="notif_count_title">Notification count</string>
+    <string name="notif_count_summary">Show notification count near notfication icons</string>
+
 </resources>
