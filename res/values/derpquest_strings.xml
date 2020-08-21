@@ -1341,9 +1341,19 @@
     <string name="volume_panel_alignment_bottom">Bottom</string>
 
     <string name="synthos_volume_panel_theme_title">Volume Panel Theme</string>
-    <string name="synthos_volume_panel_theme_summary">Reboot SystemUI to apply volume panel theme</string>
-    <string name="synthos_volume_panel_theme_default">MIUI (Default) (ExtendedUI)</string>
+    <string name="synthos_volume_panel_theme_summary">Volume Theme - Reboot to apply</string>
+    <string name="synthos_volume_panel_theme_compact">Compact</string>
     <string name="synthos_volume_panel_theme_aosp">AOSP</string>
+    <string name="synthos_volume_panel_theme_oreo">Oreo</string>
+    <string name="synthos_volume_panel_theme_tiled">Tiled</string>
+
+    <string name="volume_dialog_gradient_stroke_title">Use Gradient Stoke</string>
+    <string name="volume_dialog_gradient_stroke_summary">A Simple Gradient Stoke With System Colors</string>
+
+    <string name="volume_dialog_rounded_system_title">Use Default Backgrounds</string>
+    <string name="volume_dialog_rounded_system_summary">Use the round of System</string>
+
+    <string name="volume_dialog_rounded_value_title">Volume Panel Rounded Corners</string>
 
     <string name="synthos_ambient_text_category_title">Ambient-Synth</string>
     <string name="synthos_ambient_text_title">Ambient Text</string>
@@ -1372,8 +1382,10 @@
     <string name="file_video_select_summary">Select a video from storage</string>
     <string name="synthos_ambient_video_looping_title">Set Video Loop</string>
 
-    <string name="synthos_music_volume_panel_text_title">Music Text</string>
-    <string name="synthos_music_volume_panel_text_summary">Show Music Text in left of VolumePanel</string>
+    <string name="synthos_music_volume_panel_text_title">Media Card</string>
+    <string name="synthos_music_volume_panel_text_summary">Show Media Card in VolumePanel</string>
+    <string name="synthos_media_card_volume_panel_full_width_title">Set Full Width</string>
+    <string name="synthos_media_card_volume_panel_full_width_summary">Set Media Card like a Notification</string>
 
     <!-- StatusBar notification count -->
     <string name="notif_count_title">Notification count</string>

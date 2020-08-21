@@ -50,7 +50,7 @@ public class VolumeSettings extends SettingsPreferenceFragment
 
     private ListPreference mVolumePanelTheme;
     private ListPreference mVolumeAlignment;
-    private static final String SYNTHOS_VOLUME_PANEL_THEME = "synthos_volume_panel_theme";
+    private static final String SYSTEMUI_PLUGIN_VOLUME = "systemui_plugin_volume";
     private static final String VOLUME_PANEL_ALIGNMENT = "volume_panel_alignment";
 
     @Override
@@ -64,10 +64,9 @@ public class VolumeSettings extends SettingsPreferenceFragment
         Resources resources = getResources();
 
         // set volume panel theme
-        mVolumePanelTheme = (ListPreference) findPreference(SYNTHOS_VOLUME_PANEL_THEME);
-        int style = Settings.System.getInt(resolver,
-                Settings.System.SYNTHOS_VOLUME_PANEL_THEME, 0);
-        mVolumePanelTheme.setValue(String.valueOf(style));
+        mVolumePanelTheme = (ListPreference) findPreference(SYSTEMUI_PLUGIN_VOLUME);
+        String style = Settings.System.getString(resolver, Settings.System.SYSTEMUI_PLUGIN_VOLUME);
+        mVolumePanelTheme.setValue(style);
         mVolumePanelTheme.setSummary(mVolumePanelTheme.getEntry());
         mVolumePanelTheme.setOnPreferenceChangeListener(this);
 
@@ -88,10 +87,10 @@ public class VolumeSettings extends SettingsPreferenceFragment
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
         if (preference == mVolumePanelTheme) {
-            int style = Integer.valueOf((String) newValue);
+            String style = (String) newValue;
             int index = mVolumePanelTheme.findIndexOfValue((String) newValue);
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.SYNTHOS_VOLUME_PANEL_THEME, style);
+            Settings.System.putString(getActivity().getContentResolver(),
+                    Settings.System.SYSTEMUI_PLUGIN_VOLUME, style);
             mVolumePanelTheme.setSummary(mVolumePanelTheme.getEntries()[index]);
             return true;
         } else if (preference == mVolumeAlignment) {

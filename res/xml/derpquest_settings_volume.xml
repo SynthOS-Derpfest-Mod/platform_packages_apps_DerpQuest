@@ -72,6 +72,32 @@
             android:title="@string/synthos_music_volume_panel_text_title"
             android:defaultValue="true" />
 
+         <com.derpquest.settings.preferences.SystemSettingSwitchPreference
+            android:key="synthos_media_card_volume_panel_full_width"
+            android:summary="@string/synthos_media_card_volume_panel_full_width_summary"
+            android:title="@string/synthos_media_card_volume_panel_full_width_title"
+            android:defaultValue="false" />
+
+         <com.derpquest.settings.preferences.SystemSettingSwitchPreference
+            android:key="volume_dialog_gradient_stroke"
+            android:summary="@string/volume_dialog_gradient_stroke_summary"
+            android:title="@string/volume_dialog_gradient_stroke_title"
+            android:defaultValue="true" />
+
+         <com.derpquest.settings.preferences.SystemSettingSwitchPreference
+            android:key="volume_dialog_rounded_system"
+            android:summary="@string/volume_dialog_rounded_system_summary"
+            android:title="@string/volume_dialog_rounded_system_title"
+            android:defaultValue="true" />
+
+        <com.derpquest.settings.preferences.SystemSettingSeekBarPreference
+            android:key="volume_dialog_rounded_value"
+            android:title="@string/volume_dialog_rounded_value_title"
+            android:min="0"
+            android:max="100"
+            settings:units="dp"
+            android:defaultValue="36" />
+
     </PreferenceCategory>
 
      <com.derpquest.settings.preferences.SystemSettingSwitchPreference
