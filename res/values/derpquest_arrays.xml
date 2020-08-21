@@ -1067,4 +1067,16 @@
         <item>2</item>
     </string-array>
 
+    <!-- QS Themes Type Background -->
+    <string-array name="qs_bg_type_entries" translatable="false">
+        <item>@string/qs_bg_type_color</item>
+        <item>@string/qs_bg_type_custom_image</item>
+        <item>@string/qs_bg_type_media_artwork</item>
+    </string-array>
+     <string-array name="qs_bg_type_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
 </resources>

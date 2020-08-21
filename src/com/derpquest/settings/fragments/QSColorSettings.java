@@ -15,12 +15,14 @@
  */
 package com.derpquest.settings.fragments;
 
+import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.content.res.Resources;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.SearchIndexableResource;
@@ -59,12 +61,19 @@ public class QSColorSettings extends SettingsPreferenceFragment implements
     private static final String USE_WALL = "qs_panel_bg_use_wall";
     private static final String USE_ACCENT = "qs_panel_bg_use_accent";
     private static final String PANEL_COLOR = "qs_panel_color";
+    private static final String QS_PANEL_TYPE_BACKGROUND = "qs_panel_type_background";
+    private static final String FILE_QSPANEL_SELECT = "file_qspanel_select";
+    private static final String BLUR_IMAGE = "qs_panel_custom_image_blur";
 
     private static final int DEFAULT_QS_PANEL_COLOR = 0xffffffff;
+    private static final int REQUEST_PICK_IMAGE = 0;
 
     private SystemSettingSwitchPreference mUseWall;
     private SystemSettingSwitchPreference mUseAccent;
+    private SystemSettingSwitchPreference mBlurImage;
     private ColorPickerPreference mColor;
+    private ListPreference mQsPanelTypeBackground;
+    private Preference mQsPanelImage;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -76,6 +85,7 @@ public class QSColorSettings extends SettingsPreferenceFragment implements
 
         mUseWall = (SystemSettingSwitchPreference) findPreference(USE_WALL);
         mUseAccent = (SystemSettingSwitchPreference) findPreference(USE_ACCENT);
+        mBlurImage = (SystemSettingSwitchPreference) findPreference(BLUR_IMAGE);
         mColor = (ColorPickerPreference) findPreference(PANEL_COLOR);
         mColor.setOnPreferenceChangeListener(this);
         int intColor = Settings.System.getIntForUser(resolver,
@@ -84,12 +94,43 @@ public class QSColorSettings extends SettingsPreferenceFragment implements
         mColor.setSummary(hexColor);
         mColor.setNewPreviewColor(intColor);
 
+        // qs theme type background
+        mQsPanelTypeBackground = (ListPreference) findPreference(QS_PANEL_TYPE_BACKGROUND);
+        mQsPanelTypeBackground.setValue(String.valueOf(Settings.System.getInt(
+                getContentResolver(), Settings.System.QS_PANEL_TYPE_BACKGROUND, 0)));
+        mQsPanelTypeBackground.setSummary(mQsPanelTypeBackground.getEntry());
+        mQsPanelTypeBackground.setOnPreferenceChangeListener(this);
+
+        mQsPanelImage = findPreference(FILE_QSPANEL_SELECT);
+
+        setEnabled();
+
+    }
+
+    private void setEnabled() {
+        final ContentResolver resolver = getContentResolver();
         // NOTE: Reverse logic
         boolean isEnabled = Settings.System.getInt(resolver,
                 Settings.System.QS_PANEL_BG_USE_FW, 1) == 0;
-        mUseWall.setEnabled(isEnabled);
-        mUseAccent.setEnabled(isEnabled);
-        mColor.setEnabled(isEnabled);
+        boolean imageType = Settings.System.getInt(resolver,
+                Settings.System.QS_PANEL_TYPE_BACKGROUND, 0) != 0;
+        mQsPanelTypeBackground.setEnabled(isEnabled);
+        mQsPanelImage.setEnabled(isEnabled && imageType);
+        mUseWall.setEnabled(isEnabled && !imageType);
+        mUseAccent.setEnabled(isEnabled && !imageType);
+        mColor.setEnabled(isEnabled && !imageType);
+        mBlurImage.setEnabled(isEnabled && imageType);
+    }
+
+    @Override
+    public boolean onPreferenceTreeClick(Preference preference) {
+        if (preference == mQsPanelImage) {
+            Intent intent = new Intent(Intent.ACTION_PICK);
+            intent.setType("image/*");
+            startActivityForResult(intent, REQUEST_PICK_IMAGE);
+            return true;
+        }
+        return super.onPreferenceTreeClick(preference);
     }
 
     @Override
@@ -103,8 +144,26 @@ public class QSColorSettings extends SettingsPreferenceFragment implements
             Settings.System.putIntForUser(resolver,
                     Settings.System.QS_PANEL_BG_COLOR, intHex, UserHandle.USER_CURRENT);
             return true;
+        } else if (preference == mQsPanelTypeBackground) {
+            Settings.System.putInt(getContentResolver(), Settings.System.QS_PANEL_TYPE_BACKGROUND,
+                    Integer.valueOf((String) newValue));
+            mQsPanelTypeBackground.setValue(String.valueOf(newValue));
+            mQsPanelTypeBackground.setSummary(mQsPanelTypeBackground.getEntry());
+            setEnabled();
+            return true;
         }
         return false;
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent result) {
+        if (requestCode == REQUEST_PICK_IMAGE) {
+            if (resultCode != Activity.RESULT_OK) {
+                return;
+            }
+            final Uri imageUri = result.getData();
+            Settings.System.putString(getContentResolver(), Settings.System.QS_PANEL_CUSTOM_IMAGE, imageUri.toString());
+        }
     }
 
     @Override

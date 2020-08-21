@@ -785,7 +785,13 @@
 
     <!-- QS themes -->
     <string name="qs_themes_category_title">QS Themes</string>
+    <string name="qs_bg_type_title">QS Panel Type Background</string>
+    <string name="qs_bg_type_color">Color</string>
+    <string name="qs_bg_type_custom_image">Custom Image</string>
+    <string name="qs_bg_type_media_artwork">Media Artwork (if is posible)</string>
     <string name="qs_panel_color_title">QS Panel color</string>
+    <string name="qs_bg_blur_image_title">Blur Image</string>
+    <string name="qs_bg_blur_image_summary">Blur Custom Image or Media Artwork</string>
     <string name="qs_bg_wall_title">Use Wallpaper colors</string>
     <string name="qs_bg_wall_summary">Set QS background color from Wallpaper</string>
     <string name="qs_bg_use_fw">Override default colors</string>
