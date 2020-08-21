@@ -52,6 +52,12 @@
             android:entryValues="@array/qs_selector_values" />
 
         <com.derpquest.settings.preferences.SystemSettingSwitchPreference
+            android:key="qs_panel_wallpaper_background"
+            android:title="@string/qs_wallpaper_title"
+            android:summary="@string/qs_wallpaper_summary"
+            android:defaultValue="false" />
+
+        <com.derpquest.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_panel_bg_use_new_tint"
             android:title="@string/qs_bg_use_new_tint"
             android:summary="@string/qs_bg_use_new_tint_summary"

@@ -1353,6 +1353,9 @@
     <string name="volume_dialog_rounded_system_title">Use Default Backgrounds</string>
     <string name="volume_dialog_rounded_system_summary">Use the round of System</string>
 
+    <string name="qs_wallpaper_title">Wallpaper behind QS</string>
+    <string name="qs_wallpaper_summary">Use the wallpaper behind QS</string>
+
     <string name="volume_dialog_rounded_value_title">Volume Panel Rounded Corners</string>
 
     <string name="synthos_ambient_text_category_title">Ambient-Synth</string>
