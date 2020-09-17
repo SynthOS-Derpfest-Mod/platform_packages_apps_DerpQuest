@@ -25,6 +25,15 @@
             android:dialogTitle="@string/show_carrier_title"
             android:defaultValue="0" />
 
+        <com.derpquest.settings.preferences.SystemSettingListPreference
+            android:key="status_bar_carrier_text_type"
+            android:title="@string/status_bar_carrier_text_type_title"
+            android:dialogTitle="@string/status_bar_carrier_text_type_title"
+            android:entries="@array/status_bar_carrier_text_type_entries"
+            android:entryValues="@array/status_bar_carrier_text_type_values"
+            android:summary="%s"
+            android:defaultValue="0" />
+
         <PreferenceScreen
             android:key="custom_carrier_label"
             android:title="@string/custom_carrier_label_title" />

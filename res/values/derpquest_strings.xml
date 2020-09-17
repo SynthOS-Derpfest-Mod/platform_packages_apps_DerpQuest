@@ -656,6 +656,11 @@
     <string name="status_bar_carrier_color">Carrier label color</string>
     <string name="status_bar_carrier_size">Carrier label size</string>
     <string name="status_bar_carrier_font_style_title">Carrier Label Font</string>
+    <string name="status_bar_carrier_text_type_title">Carrier Label Text Type</string>
+    <string name="status_bar_carrier_text_type_default">Default or Custom</string>
+    <string name="status_bar_carrier_text_type_song">Media Song Title</string>
+    <string name="status_bar_carrier_text_type_album">Media Album Title</string>
+    <string name="status_bar_carrier_text_type_artist">Media Artist Name</string>
 
     <!-- Lockscreen battery info indicator  -->
     <string name="lockscreen_battery_info_title">Lockscreen charging info</string>
