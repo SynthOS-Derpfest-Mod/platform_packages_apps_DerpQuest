@@ -100,6 +100,11 @@
         <com.derpquest.settings.preferences.SystemSettingSwitchPreference
             android:key="synthui_statusicons_qsexpanded"
             android:title="@string/synthui_statusicons_qsextended_title"
+            android:defaultValue="false" />
+
+        <com.derpquest.settings.preferences.SystemSettingSwitchPreference
+            android:key="synthui_statusicons_qs_status"
+            android:title="@string/synthui_statusinfo_qsheader_title"
             android:defaultValue="true" />
 
         <com.derpquest.settings.preferences.SystemSettingSwitchPreference

@@ -1328,7 +1328,8 @@
     <string name="synthui_font_qsexpanded_dialog_title">Select a Font</string>
 
     <string name="synthui_statusicons_qsextended_title">Show Status Icons in QS Header</string>
-    <string name="synthui_statusinfo_qsextended_title">Show Status Info in QS Header</string>
+    <string name="synthui_statusinfo_qsextended_title">Show Status Info in QS Expanded</string>
+    <string name="synthui_statusinfo_qsheader_title">Show Status Info in QS Header</string>
     <string name="synthui_weather_title">Show Weather in QS Header</string>
 
     <string name="synthui_qsexpanded_text_show_title">Show QS expanded text</string>
