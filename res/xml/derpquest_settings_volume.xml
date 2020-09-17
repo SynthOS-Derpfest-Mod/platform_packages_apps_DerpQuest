@@ -78,16 +78,33 @@
             android:title="@string/synthos_media_card_volume_panel_full_width_title"
             android:defaultValue="false" />
 
+        <ListPreference
+            android:key="synthos_volume_panel_background_type"
+            android:title="@string/volume_panel_background_type_title"
+            android:dialogTitle="@string/volume_panel_background_type_title"
+            android:entries="@array/volume_panel_background_type_entries"
+            android:entryValues="@array/volume_panel_background_type_values"
+            android:summary="%s"
+            android:defaultValue="0"
+            android:persistent="false" />
+
+        <Preference
+            android:key="file_volume_select"
+            android:title="@string/file_header_select_title"
+            android:summary="@string/file_header_select_summary"
+            android:persistent="false" >
+        </Preference>
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="synthos_volume_panel_background_color"
+            android:title="@string/volume_panel_background_color_title"
+            android:defaultValue="0xffffff"
+            android:persistent="false" />
+
          <com.derpquest.settings.preferences.SystemSettingSwitchPreference
             android:key="volume_dialog_gradient_stroke"
             android:summary="@string/volume_dialog_gradient_stroke_summary"
             android:title="@string/volume_dialog_gradient_stroke_title"
-            android:defaultValue="true" />
-
-         <com.derpquest.settings.preferences.SystemSettingSwitchPreference
-            android:key="volume_dialog_rounded_system"
-            android:summary="@string/volume_dialog_rounded_system_summary"
-            android:title="@string/volume_dialog_rounded_system_title"
             android:defaultValue="true" />
 
         <com.derpquest.settings.preferences.SystemSettingSeekBarPreference

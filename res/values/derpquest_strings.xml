@@ -1359,6 +1359,13 @@
     <string name="volume_dialog_rounded_system_title">Use Default Backgrounds</string>
     <string name="volume_dialog_rounded_system_summary">Use the round of System</string>
 
+    <string name="volume_panel_background_type_title">Type Background</string>
+    <string name="volume_panel_background_type_default">Default Background</string>
+    <string name="volume_panel_background_type_default_color">Default Color Background</string>
+    <string name="volume_panel_background_type_custom_color">Custom Color</string>
+    <string name="volume_panel_background_type_image">Image</string>
+    <string name="volume_panel_background_color_title">Custom Color</string>
+
     <string name="qs_wallpaper_title">Wallpaper behind QS</string>
     <string name="qs_wallpaper_summary">Use the wallpaper behind QS</string>
 

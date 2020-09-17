@@ -1079,6 +1079,20 @@
         <item>2</item>
     </string-array>
 
+    <!-- Volume Panel Type background -->
+    <string-array name="volume_panel_background_type_entries" translatable="false">
+        <item>@string/volume_panel_background_type_default</item>
+        <item>@string/volume_panel_background_type_default_color</item>
+        <item>@string/volume_panel_background_type_custom_color</item>
+        <item>@string/volume_panel_background_type_image</item>
+    </string-array>
+     <string-array name="volume_panel_background_type_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
     <!-- Carrier Label Text Type -->
     <string-array name="status_bar_carrier_text_type_entries" translatable="false">
         <item>@string/status_bar_carrier_text_type_default</item>
