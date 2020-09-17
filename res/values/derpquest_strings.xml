@@ -1396,6 +1396,14 @@
     <string name="synthos_media_card_volume_panel_full_width_title">Set Full Width</string>
     <string name="synthos_media_card_volume_panel_full_width_summary">Set Media Card like a Notification</string>
 
+    <!-- Synth Notification Footer Buttons Style -->
+    <string name="notification_panel_buttons_title">Replace text buttons with new cool buttons</string>
+    <string name="notification_panel_buttons_summary">Show notifications footer buttons like notifications</string>
+
+    <!-- Hide Manage Button -->
+    <string name="hide_manage_button_title">Hide Manage Button</string>
+    <string name="hide_manage_button_summary">Hide manage button in case you dont use it</string>
+
     <!-- SynthUI Header more small -->
     <string name="synthui_qs_header_large_title">Header size more small</string>
     <string name="synthui_qs_header_large_summary">Header size smaller and lower in case you dont like it that way</string>

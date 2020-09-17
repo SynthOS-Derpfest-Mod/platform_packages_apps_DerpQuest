@@ -88,22 +88,10 @@
             android:summary="@string/notification_headers_summary"
             android:defaultValue="false" />
 
-        <com.derpquest.settings.preferences.SystemSettingSwitchPreference
-            android:key="synthos_center_notification_headers"
-            android:title="@string/synthos_center_notification_headers_title"
-            android:summary="@string/synthos_center_notification_headers_summary"
-            android:defaultValue="true" />
-
         <com.derpquest.settings.preferences.GlobalSettingMasterSwitchPreference
             android:key="heads_up_settings"
             android:title="@string/heads_up_settings_title"
             android:fragment="com.derpquest.settings.fragments.HeadsUp" />
-
-        <com.derpquest.settings.preferences.SystemSettingSwitchPreference
-            android:key="dismiss_all_button"
-            android:title="@string/enable_clear_all_button"
-            android:summary="@string/enable_clear_all_button_summary"
-            android:defaultValue="true" />
 
         <!-- Pulse Ambient Light (aka Edge Lighting) -->
         <com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference
@@ -111,6 +99,35 @@
             android:title="@string/edge_lighting_category_title"
             android:fragment="com.derpquest.settings.fragments.AmbientLight"
             android:defaultValue="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/synthui_category_title">
+
+        <com.derpquest.settings.preferences.SystemSettingSwitchPreference
+            android:key="synthos_center_notification_headers"
+            android:title="@string/synthos_center_notification_headers_title"
+            android:summary="@string/synthos_center_notification_headers_summary"
+            android:defaultValue="true" />
+
+        <com.derpquest.settings.preferences.SystemSettingSwitchPreference
+            android:key="dismiss_all_button"
+            android:title="@string/enable_clear_all_button"
+            android:summary="@string/enable_clear_all_button_summary"
+            android:defaultValue="false" />
+
+        <com.derpquest.settings.preferences.SystemSettingSwitchPreference
+            android:key="notification_panel_buttons"
+            android:title="@string/notification_panel_buttons_title"
+            android:summary="@string/notification_panel_buttons_summary"
+            android:defaultValue="true" />
+
+        <com.derpquest.settings.preferences.SystemSettingSwitchPreference
+            android:key="hide_manage_button"
+            android:title="@string/hide_manage_button_title"
+            android:summary="@string/hide_manage_button_summary"
+            android:defaultValue="true" />
 
     </PreferenceCategory>
 
