@@ -1396,6 +1396,10 @@
     <string name="synthos_media_card_volume_panel_full_width_title">Set Full Width</string>
     <string name="synthos_media_card_volume_panel_full_width_summary">Set Media Card like a Notification</string>
 
+    <!-- SynthUI Header more small -->
+    <string name="synthui_qs_header_large_title">Header size more small</string>
+    <string name="synthui_qs_header_large_summary">Header size smaller and lower in case you dont like it that way</string>
+
     <!-- StatusBar notification count -->
     <string name="notif_count_title">Notification count</string>
     <string name="notif_count_summary">Show notification count near notfication icons</string>
