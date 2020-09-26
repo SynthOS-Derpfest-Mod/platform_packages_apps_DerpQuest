@@ -60,7 +60,6 @@
     <string name="hidden">Hidden</string>
     <string name="intensity">Intensity</string>
     <string name="and"> &amp; </string>
-    <string name="custom_string">Custom</string>
 
     <!-- General error strings -->
     <string name="translation_error">Translation error</string>
@@ -1311,11 +1310,6 @@
     <!-- Volume dialog timeout -->
     <string name="volume_dialog_timeout_title">Volume dialog timeout</string>
 
-    <!-- Powermenu Background -->
-    <string name="power_menu_bg_title">Background Filter</string>
-    <string name="power_menu_bg_summary">Enables Custom filter when powermenu is active</string>
-    <string name="power_menu_bg_style_title">Filter Type</string>
-
     <!-- SynthUI QSPanel -->
     <string name="synthui_color_type_clock_qsexpanded_title">Select Color Type for Clock</string>
     <string name="synthui_color_type_date_qsexpanded_title">Select Color Type for Date</string>
@@ -1414,10 +1408,6 @@
     <!-- SynthUI Header more small -->
     <string name="synthui_qs_header_large_title">Header size more small</string>
     <string name="synthui_qs_header_large_summary">Header size smaller and lower in case you dont like it that way</string>
-
-    <!-- StatusBar notification count -->
-    <string name="notif_count_title">Notification count</string>
-    <string name="notif_count_summary">Show notification count near notfication icons</string>
 
     <!-- Add Media Card in Ambient -->
     <string name="media_card_ambient_title">Media Card in Ambient</string>

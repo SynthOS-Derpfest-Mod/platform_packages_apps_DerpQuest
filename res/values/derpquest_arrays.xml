@@ -987,16 +987,6 @@
         <item>1</item>
     </string-array>
 
-    <!-- Volume Panel Theme -->
-    <string-array name="volume_theme_entries" translatable="false">
-        <item>@string/synthos_volume_panel_theme_default</item>
-        <item>@string/synthos_volume_panel_theme_aosp</item>
-    </string-array>
-     <string-array name="volume_theme_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-    </string-array>
-
     <!-- Volume Panel Alignment -->
     <string-array name="volume_alignment_entries" translatable="false">
         <item>@string/volume_panel_alignment_top</item>
@@ -1038,21 +1028,6 @@
         <item>0</item>
         <item>1</item>
         <item>2</item>
-    </string-array>
-
-   <!-- PowerMenu Filter -->
-    <string-array name="power_menu_bg_style_entries" translatable="false">
-        <item>@string/lockscreen_cover_filter_blur</item>
-        <item>@string/lockscreen_cover_filter_grayscale</item>
-        <item>@string/lockscreen_cover_filter_tint</item>
-        <item>@string/lockscreen_cover_filter_grayblur</item>
-    </string-array>
-
-    <string-array name="power_menu_bg_style_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
     </string-array>
 
     <!-- SynthUI Color Type -->
