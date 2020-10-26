@@ -568,7 +568,9 @@
         <item>@string/lockscreen_clock_selection_gradient_btlglogo</item>
         <item>@string/lockscreen_clock_selection_gradient_shishu</item>
         <item>@string/lockscreen_clock_selection_gradient_full</item>
+        <item>@string/lockscreen_clock_selection_gradient_box_full</item>
         <item>@string/lockscreen_clock_selection_gradient_likeqs</item>
+        <item>@string/lockscreen_clock_selection_gradient_box_likeqs</item>
         <item>@string/lockscreen_clock_selection_tikkiui_zerotwo</item>
         <item>@string/lockscreen_clock_selection_tikkiui_diamond</item>
     </string-array>
@@ -595,6 +597,8 @@
         <item>18</item>
         <item>19</item>
         <item>20</item>
+        <item>21</item>
+        <item>22</item>
     </string-array>
 
      <!-- Lockscreen date styles -->
