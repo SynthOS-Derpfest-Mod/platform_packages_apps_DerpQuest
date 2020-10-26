@@ -18,6 +18,13 @@
     android:title="@string/blur_quicksettings"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <!-- QS Extra Blur -->
+    <com.derpquest.settings.preferences.SystemSettingSwitchPreference
+        android:key="qs_extra_blur"
+        android:title="@string/qs_extra_blur_title"
+        android:summary="@string/qs_extra_blur_summary"
+        android:defaultValue="true" />
+
     <com.derpquest.settings.preferences.CustomSeekBarPreference
         android:key="qs_blur_alpha"
         android:title="@string/qs_blur_alpha_title"
