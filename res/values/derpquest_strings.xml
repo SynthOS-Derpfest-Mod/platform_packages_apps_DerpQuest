@@ -1393,6 +1393,10 @@
     <string name="synth_smart_media_title">Synth Smart Media</string>
     <string name="synth_smart_media_summary">Enable a Media Player in Clock Lockscreen</string>
 
+    <!-- AOD Icons in Lockscreen! -->
+    <string name="ambient_icons_lockscreen_title">AOD Icons in Lockscreen</string>
+    <string name="ambient_icons_lockscreen_summary">Replace Notifications for AOD Icons</string>
+
     <string name="volume_dialog_rounded_value_title">Volume Panel Rounded Corners</string>
 
     <string name="synthos_ambient_text_category_title">Ambient-Synth</string>
