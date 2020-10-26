@@ -1389,6 +1389,10 @@
     <string name="synth_functional_lights_loop_animation_title">Functional Lights Loop Animation</string>
     <string name="synth_functional_lights_loop_animation_summary">Enable a Animation in loop when Visualizer is null</string>
 
+    <!-- Synth Smart Media! -->
+    <string name="synth_smart_media_title">Synth Smart Media</string>
+    <string name="synth_smart_media_summary">Enable a Media Player in Clock Lockscreen</string>
+
     <string name="volume_dialog_rounded_value_title">Volume Panel Rounded Corners</string>
 
     <string name="synthos_ambient_text_category_title">Ambient-Synth</string>

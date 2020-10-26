@@ -105,6 +105,12 @@
             android:summary="@string/media_card_ambient_summary"
             android:defaultValue="true" />
 
+        <com.derpquest.settings.preferences.SystemSettingSwitchPreference
+            android:key="synth_smart_media"
+            android:title="@string/synth_smart_media_title"
+            android:summary="@string/synth_smart_media_summary"
+            android:defaultValue="true" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
