@@ -72,6 +72,18 @@
             android:entryValues="@array/synthui_qsexpanded_clock_style_values"
             android:defaultValue="0" />
 
+        <com.derpquest.settings.preferences.SystemSettingSwitchPreference
+            android:key="synth_functional_lights"
+            android:title="@string/synth_functional_lights_title"
+            android:summary="@string/synth_functional_lights_summary"
+            android:defaultValue="true" />
+
+        <com.derpquest.settings.preferences.SystemSettingSwitchPreference
+            android:key="synth_functional_lights_loop_animation"
+            android:title="@string/synth_functional_lights_loop_animation_title"
+            android:summary="@string/synth_functional_lights_loop_animation_summary"
+            android:defaultValue="true" />
+
     </PreferenceCategory>
 
     <PreferenceCategory

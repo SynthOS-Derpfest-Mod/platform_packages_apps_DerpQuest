@@ -1381,6 +1381,14 @@
     <string name="synth_headsup_notification_media_title">Synth HeadsUp Notification Media</string>
     <string name="synth_headsup_notification_media_summary">Enable new HeadsUp! Notification Media</string>
 
+    <!-- Synth Functional Lights! -->
+    <string name="synth_functional_lights_title">Synth Functional Lights</string>
+    <string name="synth_functional_lights_summary">Enable Functional Lights</string>
+
+    <!-- Synth Functional Lights Loop Animation! -->
+    <string name="synth_functional_lights_loop_animation_title">Functional Lights Loop Animation</string>
+    <string name="synth_functional_lights_loop_animation_summary">Enable a Animation in loop when Visualizer is null</string>
+
     <string name="volume_dialog_rounded_value_title">Volume Panel Rounded Corners</string>
 
     <string name="synthos_ambient_text_category_title">Ambient-Synth</string>
