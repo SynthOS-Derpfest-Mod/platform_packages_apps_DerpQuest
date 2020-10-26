@@ -129,6 +129,12 @@
             android:summary="@string/hide_manage_button_summary"
             android:defaultValue="true" />
 
+        <com.derpquest.settings.preferences.SystemSettingSwitchPreference
+            android:key="synth_headsup_notification_media"
+            android:title="@string/synth_headsup_notification_media_title"
+            android:summary="@string/synth_headsup_notification_media_summary"
+            android:defaultValue="true" />
+
     </PreferenceCategory>
 
     <PreferenceCategory

@@ -1377,6 +1377,10 @@
     <string name="qs_extra_blur_title">QS Extra Blur</string>
     <string name="qs_extra_blur_summary">Add a little extra blur in QS Expanded</string>
 
+    <!-- Synth HeadsUp! Notification Media -->
+    <string name="synth_headsup_notification_media_title">Synth HeadsUp Notification Media</string>
+    <string name="synth_headsup_notification_media_summary">Enable new HeadsUp! Notification Media</string>
+
     <string name="volume_dialog_rounded_value_title">Volume Panel Rounded Corners</string>
 
     <string name="synthos_ambient_text_category_title">Ambient-Synth</string>
