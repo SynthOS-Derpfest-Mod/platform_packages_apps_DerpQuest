@@ -1089,4 +1089,18 @@
         <item>3</item>
     </string-array>
 
+    <!-- QS Expanded Clock Style -->
+    <string-array name="synthui_qsexpanded_clock_style_entries" translatable="false">
+        <item>@string/synthui_qsexpanded_clock_style_default</item>
+        <item>@string/synthui_qsexpanded_clock_style_material</item>
+        <item>@string/synthui_qsexpanded_clock_style_sammy</item>
+        <item>@string/synthui_qsexpanded_clock_style_material_sammy</item>
+    </string-array>
+     <string-array name="synthui_qsexpanded_clock_style_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
 </resources>

@@ -1335,6 +1335,12 @@
     <string name="synthui_qsexpanded_text_string_title">Customize text</string>
     <string name="synthui_qsexpanded_text_string_summary">Set to empty for default #SynthOS</string>
 
+    <string name="synthui_qsexpanded_clock_style_title">QS Expanded Clock Style</string>
+    <string name="synthui_qsexpanded_clock_style_default">Default</string>
+    <string name="synthui_qsexpanded_clock_style_material">Material</string>
+    <string name="synthui_qsexpanded_clock_style_sammy">Sammy</string>
+    <string name="synthui_qsexpanded_clock_style_material_sammy">Material Sammy</string>
+
     <string name="synthos_volume_panel_category_title">SynthOS - Volume Panel</string>
 
     <string name="synthos_volume_panel_padding_top_title">Volume Panel Padding Top</string>
