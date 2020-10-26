@@ -50,7 +50,6 @@ import java.util.List;
 public class VolumeSettings extends SettingsPreferenceFragment
          implements Preference.OnPreferenceChangeListener, Indexable {
 
-    private ListPreference mVolumePanelTheme;
     private ListPreference mVolumeAlignment;
     private ColorPickerPreference mColor;
     private Preference mImage;
@@ -71,13 +70,6 @@ public class VolumeSettings extends SettingsPreferenceFragment
         ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
         Resources resources = getResources();
-
-        // set volume panel theme
-        mVolumePanelTheme = (ListPreference) findPreference(SYSTEMUI_PLUGIN_VOLUME);
-        String style = Settings.System.getString(resolver, Settings.System.SYSTEMUI_PLUGIN_VOLUME);
-        mVolumePanelTheme.setValue(style);
-        mVolumePanelTheme.setSummary(mVolumePanelTheme.getEntry());
-        mVolumePanelTheme.setOnPreferenceChangeListener(this);
 
         // set volume alignment
         mVolumeAlignment = (ListPreference) findPreference(VOLUME_PANEL_ALIGNMENT);
@@ -135,14 +127,7 @@ public class VolumeSettings extends SettingsPreferenceFragment
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mVolumePanelTheme) {
-            String style = (String) newValue;
-            int index = mVolumePanelTheme.findIndexOfValue((String) newValue);
-            Settings.System.putString(getActivity().getContentResolver(),
-                    Settings.System.SYSTEMUI_PLUGIN_VOLUME, style);
-            mVolumePanelTheme.setSummary(mVolumePanelTheme.getEntries()[index]);
-            return true;
-        } else if (preference == mVolumeAlignment) {
+        if (preference == mVolumeAlignment) {
             int align = Integer.valueOf((String) newValue);
             int index = mVolumeAlignment.findIndexOfValue((String) newValue);
             Settings.System.putInt(getActivity().getContentResolver(),

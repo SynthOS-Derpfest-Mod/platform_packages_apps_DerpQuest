@@ -63,6 +63,6 @@
         android:key="synthui_qs_header_large"
         android:title="@string/synthui_qs_header_large_title"
         android:summary="@string/synthui_qs_header_large_summary"
-        android:defaultValue="false" />
+        android:defaultValue="true" />
 
 </PreferenceScreen>
